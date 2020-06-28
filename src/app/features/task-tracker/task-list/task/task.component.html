@@ -1,4 +1,16 @@
 <div class="task">
-  <p>Title: {{task.title}}</p>
-  <p>Task: {{task.content}}</p>
+  <button *ngIf="!isEdit" (click)="delete(task.id)">Delete</button>
+  <button *ngIf="!isEdit" (click)="toggleEdit()">Edit</button>
+
+  <button *ngIf="isEdit" (click)="toggleEdit()">Cancel Edit</button>
+  <div>
+    <p>Title: {{ task.title }}</p>
+    <p>Task: {{ task.content }}</p>
+  </div>
+
+  <app-task-form
+    *ngIf="isEdit"
+    (submitTask)="saveEdit($event)"
+    [taskToEdit]="task"
+  ></app-task-form>
 </div>

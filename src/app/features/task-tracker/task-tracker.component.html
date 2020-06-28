@@ -1,3 +1,6 @@
 <app-task-form (submitTask)="addTask($event)"></app-task-form>
-
-<app-task-list [tasks]=tasks></app-task-list>
+<app-task-list
+  (saveEditedTask)="updateTask($event)"
+  (delete)="deleteTask($event)"
+  [tasks]="tasks"
+></app-task-list>
