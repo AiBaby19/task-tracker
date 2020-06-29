@@ -3,3 +3,9 @@
   margin: 5px;
   padding: 5px;
 }
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskListComponent } from './task-list.component';
 import { TaskModule } from './task/task.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 
@@ -9,7 +11,8 @@ import { TaskModule } from './task/task.module';
   declarations: [TaskListComponent],
   imports: [
     CommonModule,
-    TaskModule
+    TaskModule,
+    DragDropModule
   ],
   exports: [TaskListComponent]
 })

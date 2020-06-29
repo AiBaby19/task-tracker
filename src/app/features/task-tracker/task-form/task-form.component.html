@@ -1,13 +1,15 @@
-<form [formGroup]="taskForm" (ngSubmit)="onTaskSubmit()">
-  <input
-    id="title"
-    [formControl]="taskForm.controls.title"
-    placeholder="{{ title }}"
-  />
-  <input
-    id="content"
-    [formControl]="taskForm.controls.content"
-    placeholder="{{ content }}"
-  />
-  <button type="submit">{{ taskToEdit ? "Save" : "Add" }} Task</button>
-</form>
+<div>
+  <form [formGroup]="taskForm" (ngSubmit)="onTaskSubmit()">
+    <input
+      id="title"
+      [formControl]="taskForm.controls.title"
+      placeholder="{{ title }}"
+    />
+    <input
+      id="content"
+      [formControl]="taskForm.controls.content"
+      placeholder="{{ content }}"
+    />
+    <button type="submit">{{ taskToEdit ? "Save" : "Add" }} Task</button>
+  </form>
+</div>

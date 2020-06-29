@@ -1,7 +1,17 @@
-<div *ngFor="let task of tasks">
-  <app-task
-    (saveEditedTask)="updateTask($event)"
-    (deleteTask)="deleteTask($event)"
-    [task]="task"
-  ></app-task>
+<div class="wrapper">
+  <p>{{ listType }}</p>
+  <div class="list" id={listType}>
+    <app-task
+      *ngFor="let task of tasks"
+      (saveEditedTask)="updateTask($event)"
+      (completeTask)="completeTask($event)"
+      (unCompleteTask)="unCompleteTask($event)"
+      (deleteTask)="deleteTask($event)"
+      [task]="task"
+      [listType]="listType"
+    ></app-task>
+  </div>
 </div>
+
+
+

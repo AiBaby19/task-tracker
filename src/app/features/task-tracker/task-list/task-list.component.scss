@@ -1,0 +1,11 @@
+:host {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 500px;
+  border: 1px solid lightgrey;
+}

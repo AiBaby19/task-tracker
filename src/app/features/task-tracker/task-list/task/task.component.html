@@ -1,8 +1,13 @@
 <div class="task">
-  <button *ngIf="!isEdit" (click)="delete(task.id)">Delete</button>
-  <button *ngIf="!isEdit" (click)="toggleEdit()">Edit</button>
-
-  <button *ngIf="isEdit" (click)="toggleEdit()">Cancel Edit</button>
+  <div class="btns">
+    <div>
+      <button *ngIf="!isEdit" (click)="toggleEdit()">Edit</button>
+      <button *ngIf="isEdit" (click)="toggleEdit()">Cancel Edit</button>
+      <button *ngIf="listType === 'todo'" (click)="complete(task.id)">Complete</button>
+      <button *ngIf="listType === 'done'" (click)="unComplete(task.id)">Undo Task</button>
+    </div>
+    <button (click)="delete(task.id)">Delete</button>
+  </div>
   <div>
     <p>Title: {{ task.title }}</p>
     <p>Task: {{ task.content }}</p>
